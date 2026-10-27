@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FACE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- one black box, nothing else on the page -->
+<div id="box" class="frame">
+  <!-- the face is a stack of 128x128 pngs sitting exactly on top of each other -->
+  <div id="face">
+    <img src="parts/BLANK.png" alt="" class="layer">
+    <!-- brows and eyes use the same paired pngs, each layer only shows one half -->
+    <img id="browLeft" src="" alt="" class="layer left">
+    <img id="browRight" src="" alt="" class="layer right">
+    <img id="eyeLeft" src="" alt="" class="layer left">
+    <img id="eyeRight" src="" alt="" class="layer right">
+    <img id="mouth" src="" alt="" class="layer">
+
+    <!-- invisible click zones over each feature -->
+    <button class="zone" id="zone-browLeft" data-region="browLeft" aria-label="change left brow"></button>
+    <button class="zone" id="zone-browRight" data-region="browRight" aria-label="change right brow"></button>
+    <button class="zone" id="zone-eyeLeft" data-region="eyeLeft" aria-label="change left eye"></button>
+    <button class="zone" id="zone-eyeRight" data-region="eyeRight" aria-label="change right eye"></button>
+    <button class="zone" id="zone-mouth" data-region="mouth" aria-label="change mouth"></button>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
